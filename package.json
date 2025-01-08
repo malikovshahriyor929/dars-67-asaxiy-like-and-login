@@ -1,0 +1,15 @@
+{
+  "name": "dars-65-asaxiy-figma",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "tail": "npx tailwindcss -i ./css/style.css -o ./css/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

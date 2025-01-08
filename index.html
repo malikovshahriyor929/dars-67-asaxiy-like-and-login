@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="bg-[#f4f7fd] pb-24">
+    <header
+      class="bg-white shadow-[_0_10px_30px_0_rgba(209,213,223,0.5)] mb-5 max-[1129px]:pb-5 sticky top-0 z-[998]"
+    >
+      <nav
+        class="container2 flex items-center gap-5 py-5 max-[1129px]:justify-between"
+      >
+        <label
+          class="max-[1129px]:block hidden text-[28px] max-[325px]:text-[20px] text-primary"
+          for="check"
+        >
+          <i class="fa-solid fa-bars"></i> </label
+        ><!-- logo -->
+        <div class="flex items-center gap-5">
+          <img src="./assets/svg/Link.svg" alt="" />
+        </div>
+        <!-- kategory -->
+        <div
+          class="rounded-md bg-primary py-2 px-4 flex items-center gap-2 max-[1129px]:hidden"
+        >
+          <i class="fa-solid fa-bars text-white"></i>
+          <p class="text-[14px] text-white">Категории</p>
+        </div>
+        <!-- seach -->
+        <div
+          class="rounded-xl border-2 border-primary flex items-center gap-2 w-[600px] max-[1129px]:w-[270px] max-[1129px]:hidden"
+        >
+          <input
+            type="text"
+            class="rounded-xl w-full py-2 px-4"
+            placeholder="Поиск..."
+          />
+          <button class="text-white rounded-r-lg bg-primary py-2 px-4">
+            Искать
+          </button>
+        </div>
+        <!-- buttons -->
+        <input id="check" class="hidden" type="checkbox" />
+        <div class="links flex items-center gap-5">
+          <label
+            class="max-[1129px]:block hidden text-[28px] absolute top-4 left-5 text-primary"
+            for="check"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+          <a href="/">
+            <button class="flex flex-col items-center gap-1">
+              <img class="" src="./assets/svg/compare_header.svg.svg" alt="" />
+              <p class="text-[12px]">Сравнение</p>
+            </button>
+          </a>
+          <a href="/">
+            <button class="flex flex-col items-center gap-1 justify-between">
+              <img src="./assets/svg/payment.svg.svg" alt="" />
+              <p class="text-[12px]">Оплатить</p>
+            </button>
+          </a>
+          <a href="/">
+            <button class="flex flex-col items-center gap-1">
+              <img class="" src="./assets/svg/tracker.svg fill.svg" alt="" />
+              <p class="text-[12px]">Отследить</p>
+            </button>
+          </a>
+          <a class="max-[1129px]:hidden" href="./shop.html">
+            <button class="cart flex flex-col items-center gap-1 relative">
+              <p
+                class="cart_p absolute top-[-7px] right-0 bg-primary text-white px-1.5 text-[12px] rounded-full"
+              >
+                0
+              </p>
+              <img class="" src="./assets/svg/cart.svg fill.svg" alt="" />
+              <p class="text-[12px]">Корзина</p>
+            </button>
+          </a>
+          <a href="/">
+            <button class="like flex flex-col items-center gap-1 relative">
+              <p
+                class="like_p absolute top-[-7px] right-2.5 bg-primary text-white px-1.5 text-[12px] rounded-full max-[1129px]:hidden"
+              >
+                0
+              </p>
+              <img class="" src="./assets/svg/heart.svg fill.svg" alt="" />
+              <p class="text-[12px]">Избранное</p>
+            </button>
+          </a>
+          <a href="/">
+            <button class="flex flex-col items-center gap-1">
+              <img
+                class=""
+                src="./assets/svg/language-uz.svg fill.svg"
+                alt=""
+              />
+              <p class="text-[12px]">O'zbekcha</p>
+            </button>
+          </a>
+          <a href="./login.html">
+            <button class="flex flex-col items-center gap-1">
+              <img src="./assets/svg/avatar.svg.svg" alt="" />
+              <p class="text-[12px] login">Войти</p>
+            </button>
+          </a>
+        </div>
+
+        <button
+          class="text-white rounded-lg hidden max-[1129px]:block max-[325px]:text-[14px] max-[325px]:px-2 max-[325px]:py-1 bg-primary py-2 px-4"
+        >
+          O'zbekcha
+        </button>
+
+        <div
+          class="items-center gap-5 fixed justify-between px-10 bottom-0 left-0 right-0 bg-white p-5 max-[369px]:px-5 max-[316px]:gap-3 max-[316px]:px-2 max-[1129px]:flex hidden"
+        >
+          <a href="/">
+            <button class="flex flex-col items-center gap-1">
+              <img src="./assets/svg/home.svg" alt="" />
+              <p class="text-[16px]">Главная</p>
+            </button>
+          </a>
+          <a href="/">
+            <button class="flex flex-col items-center gap-1">
+              <img src="./assets/svg/grid.svg" alt="" />
+              <p class="text-[16px]">Каталог</p>
+            </button>
+          </a>
+          <a href="./shop.html">
+            <button class="cart flex flex-col items-center gap-1 relative">
+              <i class="text-[30px] text-[gray] fa-solid fa-cart-shopping"></i>
+              <p class="text-[16px]">Корзина</p>
+            </button>
+          </a>
+          <a href="../login.html">
+            <button class="flex flex-col items-center gap-1">
+              <i class="text-[30px] text-[gray] fa-regular fa-user"></i>
+              <p class="text-[16px] login2">Войти</p>
+            </button>
+          </a>
+        </div>
+      </nav>
+      <nav class="container2">
+        <div
+          class="rounded-xl border-2 border-primary hidden items-center gap-2 w-full max-[1129px]:flex"
+        >
+          <input
+            type="text"
+            class="rounded-xl w-full py-2 px-4 outline-none text-primary"
+            placeholder="Поиск..."
+          />
+          <button class="text-white rounded-r-lg bg-primary py-2 px-4">
+            Искать
+          </button>
+        </div>
+      </nav>
+      <nav class="container2">
+        <div class="Filter flex justify-between gap-3 py-3 mt-4 border-t">
+          <p id="all">All</p>
+          <p id="TECNO">Tecno</p>
+          <p id="REDMI" class="max-[309px]:hidden">Redmi</p>
+          <p id="SAMSUNG">Samsung</p>
+          <p id="APPLE">Apple</p>
+        </div>
+      </nav>
+    </header>
+    <!-- swiper -->
+    <section>
+      <div class="container2 pb-9 !z-30">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="w-full">
+                <img
+                  src="./assets/svg/Picture → 67600dfb4bfa5.jpg.webp.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="w-full">
+                <img
+                  src="./assets/svg/Picture → 6761504b87883.jpg.webp.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="w-full">
+                <img
+                  src="./assets/svg/Picture → 676153c3c9f27.jpg.webp.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="w-full">
+                <img
+                  src="./assets/svg/Picture → 67616261b1056.jpg.webp.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="w-full">
+                <img
+                  src="./assets/svg/Picture → 67600dfb4bfa5.jpg.webp.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="w-full">
+                <img
+                  src="./assets/svg/Picture → 6761504b87883.jpg.webp.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="w-full">
+                <img
+                  src="./assets/svg/Picture → 676153c3c9f27.jpg.webp.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="w-full">
+                <img
+                  src="./assets/svg/Picture → 67616261b1056.jpg.webp.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- cards  -->
+    <section>
+      <div class="container2">
+        <div
+          class="cards grid grid-cols-5 gap-5 max-[1400px]:grid-cols-4 max-[1129px]:grid-cols-3 max-[885px]:grid-cols-2 max-[580px]:grid-cols-1"
+        ></div>
+      </div>
+    </section>
+   
+    <div
+      class="loading fixed z-[990] flex items-center justify-center object-center top-[50vh] left-[40vw]"
+    >
+      <div class="loader"></div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      let swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          330: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          580: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          850: {
+            slidesPerView: 4,
+            spaceBetween: 15,
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
