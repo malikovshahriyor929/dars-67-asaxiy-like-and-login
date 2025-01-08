@@ -5,12 +5,14 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 import { access } from "./main.js";
 
 access();
-if (cart.length) {
-  // console.log(emptycart.style.display = "flex");
-
-  emptycart.style.display = "block";
-} else {
-  emptycart.style.display = "none";
+function emp() {
+  if (cart.length|| cart ==[]) {
+    // console.log(emptycart.style.display = "flex");
+  
+    emptycart.style.display = "block";
+  } else {
+    emptycart.style.display = "none";
+  }
 }
 
 let allsuma = document.querySelector(".allsuma");
@@ -105,6 +107,8 @@ function deleteFunc(id) {
   cart = cart.filter((value) => value.id !== id);
   localStorage.setItem("cart", JSON.stringify(cart));
   addProduct(cart);
+  allsum(cart)
+  emp()
 }
 
 function allsum(data) {
@@ -113,6 +117,7 @@ function allsum(data) {
    count += (value.price*value.count);
   });
   allsuma.innerHTML = count.toLocaleString();
+  addProduct(cart)
 }
 
 
@@ -122,6 +127,6 @@ let UserLogin = document.querySelector(".login");
 UserLogin.innerHTML = JSON.parse(localStorage.getItem("name"));
 let UserLogin2 = document.querySelector(".login2");
 UserLogin2.innerHTML = JSON.parse(localStorage.getItem("name"));
-
+emp()
 allsum(cart);
 addProduct(cart);
