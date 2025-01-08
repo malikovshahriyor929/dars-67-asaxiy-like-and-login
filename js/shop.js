@@ -55,9 +55,9 @@ function addProduct(data) {
         } class="delete text-[26px] text-red-500 fa-solid fa-trash"></i>
       </div> 
       <div class="flex items-center justify-center text-center gap-5">
-        <i id=${value.id} class="text-[26px] fa-solid fa-minus"></i>
-        <p class="count text-[26px]">${value.count}</p>
-        <i id=${value.id} class="text-[26px] fa-solid fa-plus"></i>
+        <i id=${value.id} class=" select-none text-[26px] fa-solid fa-minus"></i>
+        <p class="count text-[26px] select-none ">${value.count}</p>
+        <i id=${value.id} class=" select-none text-[26px] fa-solid fa-plus"></i>
       </div>
        </div>
     </div>
