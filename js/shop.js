@@ -1,12 +1,14 @@
 let products = document.querySelector(".products");
-let emptycart = document.querySelector(".Error");
+let emptycart = document.querySelector(".error");
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 // console.log(cart);
 import { access } from "./main.js";
 
-access()
-if (cart.length == 0) {
-  emptycart.style.display = "flex";
+access();
+if (cart.length) {
+  // console.log(emptycart.style.display = "flex");
+
+  emptycart.style.display = "block";
 } else {
   emptycart.style.display = "none";
 }
@@ -14,6 +16,7 @@ if (cart.length == 0) {
 let allsuma = document.querySelector(".allsuma");
 
 function addProduct(data) {
+  products.innerHTML = "";
   data.forEach((value) => {
     let product = document.createElement("div");
     product.innerHTML = `
@@ -45,23 +48,76 @@ function addProduct(data) {
           </p>
         </div>
       </div>
+       <div class="  flex flex-col  justify-evenly gap-5 ">
+      <div class="flex text-red-500 justify-center text-center gap-5">
+        <i id=${
+          value.id
+        } class="delete text-[26px] text-red-500 fa-solid fa-trash"></i>
+      </div> 
       <div class="flex items-center justify-center text-center gap-5">
-        <i class="text-[26px] fa-solid fa-minus"></i>
-        <p class="count text-[26px]">1</p>
-        <i class="text-[26px] fa-solid fa-plus"></i>
+        <i id=${value.id} class="text-[26px] fa-solid fa-minus"></i>
+        <p class="count text-[26px]">${value.count}</p>
+        <i id=${value.id} class="text-[26px] fa-solid fa-plus"></i>
       </div>
+       </div>
     </div>
         `;
     products.append(product);
   });
 }
-let count = 0;
+
+// let count = document.querySelectorAll(".count")
+
+products.addEventListener("click", (e) => {
+  let id = e.target.id;
+  if (e.target.classList.contains("delete")) {
+    deleteFunc(id);
+  }
+  if (e.target.classList.contains("fa-minus")) {
+    cart = cart.map((value) => {
+      if (value.id == +id) {
+        return { ...value, count: (value.count <= 1 ? 1 : (value.count -= 1)) };
+      }
+      return value;
+    });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    addProduct(cart);
+    allsum(cart)
+    return;
+  }
+  if (e.target.classList.contains("fa-plus")) {
+    cart = cart.map((value) => {
+      if (value.id == +id) {
+        return { ...value, count: (value.count += 1) };
+      }
+      return value;
+    });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    addProduct(cart);
+    allsum(cart)
+    return;
+  }
+  
+
+});
+
+function deleteFunc(id) {
+  cart = cart.filter((value) => value.id !== id);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  addProduct(cart);
+}
+
 function allsum(data) {
-  data.forEach((value) => {
-    count += value.price;
+  let count = 0;
+ data.forEach((value) => {
+   count += (value.price*value.count);
   });
   allsuma.innerHTML = count.toLocaleString();
 }
+
+
+
+
 let UserLogin = document.querySelector(".login");
 UserLogin.innerHTML = JSON.parse(localStorage.getItem("name"));
 let UserLogin2 = document.querySelector(".login2");

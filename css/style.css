@@ -75,7 +75,9 @@ gap: 20px;
   object-fit: contain;
   height: 160px;
 }
-
+.error{
+  display: none;
+}
 
 /* jsdbgfgbasdfsedd */
 #form {
